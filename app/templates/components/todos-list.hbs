@@ -1,0 +1,23 @@
+
+    {{!-- <div class="add-todo grad">
+    <p class="add-todo-text">משימות</p>
+    <span class="add-todo-btn btn-add">
+        <i class="faxx fa-plus-circlexx" aria-hidden="true"><span><i>+</i></span></i>
+    </span>
+    </div> --}}
+    
+    {{!-- <ul class="list todos-list"> --}}
+        {{#each model as |todo index|}}
+            {{todo-component todo=todo index=index onCheck=(action 'toggleTodoCheck')}}
+        {{/each}}
+    {{!-- </ul> --}}
+    
+    {{!-- <div class="todos-sum">
+        <ul class="list todos-sum-list">
+            <li><span>{{remaining}}</span>:לסיום</li>
+            <li {{action "clearCompleted"}} ><span>{{inflection}}</span>:הושלמו</li>
+            <li><span>{{sum}}</span>:סה"כ</li>
+        </ul>
+    </div> --}}
+
+{{!-- {{yield}} --}}

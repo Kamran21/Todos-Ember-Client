@@ -1,0 +1,19 @@
+    {{!-- <div class ="todo-item todo-toggle checkboxFour" {{action 'toggleTodoCheck' todo}}> --}}
+    
+    {{#if isEditing}}
+        <input class="input-update" type="text" name="update-todo" value={{todo.title}}>
+        {{!-- <div class="btn btn-update" {{action "update" todo}}><i aria-hidden="true" >&#x1f4be;</i></div>
+        <div class=" btn btn-cancel" {{action "cancel"}}><i aria-hidden="true" >&#x2190;</i></div>  --}}
+        <div class="btn btn-update" {{action "update" todo}}><i class="fa fa-floppy-o" aria-hidden="true" ></i></div>
+        <div class=" btn btn-cancel" {{action "cancel"}}><i class="fa fa-times-circle" aria-hidden="true" ></i></div> 
+    {{else}}
+        <div class ="todo-item todo-toggle checkboxFour" {{action 'setCompleted' todo target=todosStore}}>  
+            <input type="checkbox"  checked={{todo.completed}} id={{todo.elementId}} name ="title" >
+            <label for={{todo.elementId}} > </label> 
+        </div>
+        <p class="todo-item todo-description {{if todo.completed "todo-description-linethrough"}}" {{action "editTodo" on="doubleClick"}}>{{todo.title}}.{{index-increment index}}</p>
+        <i class="todo-item todo-remove" aria-hidden="true" {{action 'removeTodo' todo target=todosStore}}>&#10006;</i>
+    {{/if}}
+    {{!-- <i class="todo-item todo-remove fa fa-times" aria-hidden="true"></i> --}}
+    {{!-- {{fa-icon "fa-times" class="todo-item todo-remove" aria-label="Remove Me"}} --}}
+{{!-- {{yield}} --}}

@@ -1,0 +1,53 @@
+{{!-- <div class="container">
+
+    <div class="add-todo grad">
+    <p class="add-todo-text">משימות</p>
+    <span class="add-todo-btn btn-add">
+        <i class="faxx fa-plus-circlexx" aria-hidden="true"><span><i>+</i></span></i>
+    </span>
+    </div>
+    
+    <ul class="list todos-list">
+        {{#each model as |todo index|}}
+            {{todo-component todo=todo index=index onCheck=(action 'toggleTodoCheck')}}
+        {{/each}}
+    </ul>
+    
+    <div class="todos-sum">
+        <ul class="list todos-sum-list">
+            <li><span>{{remaining}}</span>:לסיום</li>
+            <li {{action "clearCompleted"}} ><span>{{inflection}}</span>:הושלמו</li>
+            <li><span>{{sum}}</span>:סה"כ</li>
+        </ul>
+    </div>
+
+</div> --}}
+<div class="container">
+
+    <div class="add-todo grad">
+        {{#if isSaving}}
+            {{!-- {{input class="input-save" type="text" name="save-todo" value=title focus-out="cancel" placeholder="תיאור משימה"}} --}}
+            {{input class="input-save" type="text" name="save-todo" value=title placeholder="תיאור משימה"}}
+            <div class="btn btn-save" {{action "save"}}><i class="fa fa-floppy-o" aria-hidden="true" ></i></div>
+            <div class=" btn btn-cancel" {{action "cancel"}}><i class="fa fa-times-circle" aria-hidden="true" ></i></div>
+            {{!-- <div class="btn-save" {{action "save"}}>Save</div> --}}
+        {{else}}
+            <p class="add-todo-text">משימות</p>
+            <span class="add-todo-btn btn-add" {{action "addTodo"}}>
+                {{!-- <i class="faxx fa-plus-circlexx" aria-hidden="true"><span><i>+</i></span></i> --}}
+                <i class="faxx fa-plus-circlexx" aria-hidden="true">+</i>
+            </span>
+        {{/if}}
+    </div>
+    
+    {{#todos-list class="list todos-list" model=model}}{{/todos-list}}
+
+    <div class="todos-sum">
+        <ul class="list todos-sum-list">
+            <li><span>{{remaining}}</span>:לסיום</li>
+            <li {{action "clearCompleted"}} ><span>{{inflection}}</span>:הושלמו</li>
+            <li><span>{{sum}}</span>:סה"כ</li>
+        </ul>
+    </div>
+
+</div>
