@@ -1,3 +1,11 @@
+# Ember & Mirage
+
+* download the app
+* In Todos-Ember-Client/app/adapters/application.js comment the host property in the json object 
+* now open command prompt and cd into the app
+* Run the following: >Ember serve
+* Open [http://localhost:4200](http://localhost:4200) in your browser
+
 # Todos-Ember-Client
 
 This README outlines the details of collaborating on this Ember application.
