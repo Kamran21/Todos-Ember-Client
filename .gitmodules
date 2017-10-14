@@ -1,0 +1,3 @@
+[submodule "Todos-Ember-Client"]
+	path = Todos-Ember-Client
+	url = https://github.com/Kamran21/Todos-Ember-Client.git
